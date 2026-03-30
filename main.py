@@ -1,6 +1,5 @@
 import machine
 import time
-from boot import wlan
 LED_PIN=15
 led=machine.Pin(LED_PIN,machine.Pin.OUT)
 led.off()
