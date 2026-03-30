@@ -27,7 +27,7 @@ class engines:
     def left_up(self):
         self.stop()
         e1=machine.PWM(self.machine.Pin(self.left_first_pin), freq=100, duty=400)
-        e2=machine.PWM(machine.Pin(self.right_first_pin), freq=100, duty=1000)
+        e2=machine.PWM(self.machine.Pin(self.right_first_pin), freq=100, duty=1000)
     def right_up(self):
         self.stop()
         e1=machine.PWM(self.machine.Pin(self.left_first_pin),freq=100,duty=1000)
@@ -35,7 +35,7 @@ class engines:
     def left_down(self):
         self.stop()
         e1=machine.PWM(self.machine.Pin(self.left_second_pin), freq=100, duty=400)
-        e2=machine.PWM(machine.Pin(self.right_second_pin), freq=100, duty=1000)
+        e2=machine.PWM(self.machine.Pin(self.right_second_pin), freq=100, duty=1000)
     def right_down(self):
         self.stop()
         e1=machine.PWM(self.machine.Pin(self.left_second_pin),freq=100,duty=1000)
@@ -50,10 +50,6 @@ try:
     import usocket as socket
 except:
     import socket
-CONTENT = b"""\
-HTTP/1.0 200 OK
-Hello #%d
-"""
 CONTENT = b"""\
 HTTP/1.0 200 OK
 Content-Type: text/html\n\r
@@ -140,11 +136,11 @@ button{
 <tr>
 <td>
 <input type="hidden" id="light_value" value="0"/>
-<button id="light_control" style="width:200px;height:200px;background-image:url('https://raw.githubusercontent.com/dgolak/esp8266/master/images/light_off.jpg');background-size:200px;"" ontouchstart="iotAction('change_light')"></button>
+<button id="light_control" style="width:200px;height:200px;background-image:url('https://raw.githubusercontent.com/dgolak/esp8266/master/images/light_off.jpg');background-size:200px;" ontouchstart="iotAction('change_light')"></button>
 </td>
 <td>
 <input type="hidden" id="led_value" value="0"/>
-<button id="led_control" style="margin-left:20px;width:200px;height:200px;background-image:url('https://raw.githubusercontent.com/dgolak/esp8266/master/images/%s');background-size:200px;"" ontouchstart="iotAction('change_led')"></button>
+<button id="led_control" style="margin-left:20px;width:200px;height:200px;background-image:url('https://raw.githubusercontent.com/dgolak/esp8266/master/images/%s');background-size:200px;" ontouchstart="iotAction('change_led')"></button>
 </td>
 </tr>
 </table>
